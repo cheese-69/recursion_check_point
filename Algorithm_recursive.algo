@@ -1,0 +1,49 @@
+// Procedure to write and read the word
+PROCEDURE READ_word(VAR WORD : STRING)
+VAR
+BEGIN
+    WHRITE("Give a word");
+    read(word)
+END
+// function to test the word if it's palindrome
+FUNCTION PALINDROME(word)
+VAR
+left:string;
+right:string;
+BEGIN
+
+left :=0;
+right:= word.length-1;
+while (left < right)
+    if word[left]<> word [right] THEN
+    RETURN FALSE
+        left := left+1
+        right :=right -1
+    ELSE
+    RETURN true;
+END
+
+// begin algorithm 
+
+ALGORITHM WORD_PALINDROME
+VAR
+n : INTEGER;
+reslt:= STRING;
+BEGIN 
+// loop fo to give the word
+
+    FOR i FROM 0 TO n  DO
+    // calling th procedure read word
+        READ_word(word)
+    END_FOR
+    // calling function palindrome
+    reslt := PALINDROME(word)
+    // display the result
+    IF (reslt=false) THEN
+        WHRITE("This word"+word+ "is not PALINDROME");
+    ELSE
+
+    WHRITE ("This word"+word+ "
+    sis PALINDROME");
+    END_IF
+END
